@@ -222,11 +222,9 @@ class Student:
                 mycursor.execute(sql, val)
 
                 result = mydb.commit()
-
-                messagebox.showinfo("Thành công", "Thêm sinh viên thành công")   
+                return 1
             except mysql.connector.Error as error:
-                messagebox.showerror("Thất lại", "Không thể thêm dữ liệu vào DB")  
-                print(error)   
+                return error   
         # GUI
 
 

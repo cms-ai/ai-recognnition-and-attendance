@@ -43,16 +43,16 @@ class StudentView:
         self.khoaMenu.config(font=("times new roman",12), bg="#e0dede", bd=0)
         self.khoaMenu.place(x=250, y=260, width=180)
         
-        self.addPhoto = tk.Button(left_Frame, text="Thêm hình ảnh", padx=30, pady=10) 
-        self.addPhoto.place(x=150, y= 350)
+        # self.addPhoto = tk.Button(left_Frame, text="Thêm hình ảnh", padx=30, pady=10) 
+        # self.addPhoto.place(x=150, y= 350)
 
-        self.valueImage = StringVar()
+        # self.valueImage = StringVar()
 
-        self.txtImg = tk.Label(left_Frame,textvariable=self.valueImage)
-        self.txtImg.place(x=150, y=400)
+        # self.txtImg = tk.Label(left_Frame,textvariable=self.valueImage)
+        # self.txtImg.place(x=150, y=400)
         
-        btn_Submit = tk.Button(left_Frame, text="Lưu vào CSDL", font=("times new roman",13,"bold"))
-        btn_Submit.place(x=80, y=450, height=50, width=300)
+        self.btnSubmit = tk.Button(left_Frame, text="Lưu vào CSDL", font=("times new roman",13,"bold"))
+        self.btnSubmit.place(x=80, y=450, height=50, width=300)
 
         #Right Frame
         right_frame = tk.Frame(self.root,bg="lightgray")
