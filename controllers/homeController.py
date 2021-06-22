@@ -1,5 +1,6 @@
 from views.homeView import HomeView
 from controllers.studentController import StudentController
+from controllers.attendanceController import AttendanceController
 class HomeController:
     def __init__(self):
         self.view = HomeView()
@@ -9,10 +10,10 @@ class HomeController:
         self.view.root.mainloop()
     def addStGUI(self, event):
         self.view.root.withdraw()
-        studentController = StudentController()
+        studentController = StudentController(HomeController)
         studentController.run()
 
-        
-
     def addStGUI2(self, event):
-        print("Hello2")
+        self.view.root.withdraw()
+        attController = AttendanceController(HomeController)
+        attController.run()

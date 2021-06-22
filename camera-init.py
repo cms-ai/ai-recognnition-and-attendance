@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+import os
 import pickle
 
 cap = cv2.VideoCapture(0)
@@ -11,11 +12,9 @@ recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read("trainer.yml")
 
 labels = {"person_name": 1}
-
 with open("labels.pickle","rb") as f:
     og_labels = pickle.load(f)
     labels = {v:k for k,v in og_labels.items()}
-
 
 while(True):
     # Capture frame-by-frame
@@ -24,12 +23,11 @@ while(True):
     # Our operations on the frame come here
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.5, minNeighbors=5)
-    
     for(x, y ,w, h) in faces:
         # print(x, y,w, h)
         roi_gray = gray[y:y+h, x:x+w] #[cord1 - height, cord2-height]
         roi_color = frame[y: y+h, x:x+w]
-        img_item = "7.png"
+        # img_item = "images/7.png"
 
         id_, conf = recognizer.predict(roi_gray)
 
@@ -53,7 +51,7 @@ while(True):
         # for (ex, ey, ew, eh) in subitems:
         #     cv2.rectangle(roi_color,(ex, ey), (ex+ew, ey+eh), (0, 255, 0), stroke)
 
-        cv2.imwrite(img_item, frame)
+        # cv2.imwrite(img_item, frame)
     # Display the resulting frame
     # cv2.imshow('frame',frame)
     cv2.imshow('frame', frame)

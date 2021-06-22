@@ -14,6 +14,7 @@ class LoginController:
     def __init__(self):
         self.view = LoginView()
         self.model = LoginModel()
+        
     def run(self):
         self.view.btnLogin.bind("<Button-1>", self.btnClicked)
         self.view.root.mainloop()
