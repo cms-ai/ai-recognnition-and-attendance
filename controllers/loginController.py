@@ -32,7 +32,7 @@ class LoginController:
                 if result:
                     # messagebox.showinfo("Welcome",f"Username: {username}\nPassword:{password}")
                     self.view.root.withdraw()
-                    homeController = HomeController()
+                    homeController = HomeController(LoginController)
                     homeController.run()
                 else:
                     messagebox.showerror("Lỗi","Tài khoản hoặc mật khẩu không chính xác")

@@ -24,7 +24,7 @@ class HomeView:
         self.add_St3 = tk.Button(frame_home, text="Quản lý", font=("times new roman",18,"bold"))
         self.add_St3.place(x=500, y=400,width=170, height=80)
 
-        self.add_St4 = tk.Button(frame_home, text="Báo cáo", font=("times new roman",18,"bold"))
+        self.add_St4 = tk.Button(frame_home, text="Thoát", font=("times new roman",18,"bold"))
         self.add_St4.place(x=700, y=400,width=170, height=80)
         self.bg1 = ImageTk.PhotoImage(file="images/vku.png")
         self.bg_image1 = tk.Label(frame_home, image=self.bg1, bg="white").place(x=0, y=100, relwidth=1)
